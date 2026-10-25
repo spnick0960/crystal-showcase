@@ -1,20 +1,53 @@
-<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>商品頁</title><style>*{box-sizing:border-box;margin:0}body{font-family:'Noto Sans CJK TC','Noto Sans TC',sans-serif;background:#F7F4EF;color:#2E2B28;font-size:16px;line-height:1.7}
-a{color:inherit;text-decoration:none}.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid #E4DED5;background:#F7F4EF}header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px}
-.brand{font-size:18px;letter-spacing:.08em;font-weight:500}nav{display:flex;gap:4px}nav a{min-height:44px;min-width:44px;padding:0 12px;display:flex;align-items:center;font-size:16px}
-.ph{position:relative;overflow:hidden;background:#EFEBE4}.ph img{display:block;width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;right:8px;bottom:8px;background:rgba(255,255,255,.88);color:#4A4540;font-size:12px;padding:2px 8px;border-radius:2px}
-.demo{display:inline-block;font-size:12px;color:#5E5852;border:1px solid #B9B0A5;border-radius:2px;padding:0 6px;margin-left:6px;vertical-align:middle;line-height:20px;font-weight:400}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;background:#5B6B5E;color:#fff;font-size:17px;letter-spacing:.06em;border-radius:2px}
-.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:1px solid #5B6B5E;color:#3F4D42;font-size:16px;border-radius:2px}
-.muted{color:#6B645C}h2{font-size:22px;font-weight:500;letter-spacing:.04em}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 14px}@media(min-width:900px){.grid{grid-template-columns:repeat(4,1fr);gap:40px 28px}}
-.card .ph{aspect-ratio:1}.card .nm{margin-top:12px;font-size:16px}.card .pr{font-size:16px;font-weight:500}.card .st{font-size:14px;color:#6B645C}
-footer{margin-top:72px;padding:40px 0;border-top:1px solid #E4DED5;font-size:14px;color:#6B645C}</style><body><header><div class="wrap"><a class="brand" href="index.html" style="min-height:44px;display:flex;align-items:center">品牌名稱（示意）</a><nav><a href="list.html">手串</a><a href="list.html">手鐲</a></nav></div></header><section class="wrap" style="padding-top:12px"><a href="list.html" style="min-height:44px;display:inline-flex;align-items:center" class="muted">← 所有商品</a>
-<div class="pd" style="display:grid;gap:24px;margin-top:8px"><div class="ph" style="aspect-ratio:1"><img src="photos/p2-amethyst.jpg" alt="紫水晶手串"><span class="tag">示意圖</span></div>
-<div><h1 style="font-size:26px;font-weight:500">紫水晶手串<span class="demo">展示用</span></h1><p style="font-size:22px;margin:4px 0 20px">NT$ 1,580<span class="demo">展示用價格</span></p>
-<dl style="display:grid;grid-template-columns:5em 1fr;row-gap:10px;border-top:1px solid #E4DED5;border-bottom:1px solid #E4DED5;padding:16px 0"><dt class="muted">類別</dt><dd>手串</dd><dt class="muted">石種</dt><dd>紫水晶</dd><dt class="muted">尺寸</dt><dd>珠徑 10mm・內圍約 15cm</dd><dt class="muted">數量</dt><dd>剩 2 件</dd></dl>
-<div style="display:flex;align-items:center;gap:12px;margin:24px 0"><span class="muted">數量</span><a style="width:48px;height:48px;border:1px solid #CFC7BC;display:flex;align-items:center;justify-content:center;font-size:20px">−</a><span style="min-width:24px;text-align:center">1</span><a style="width:48px;height:48px;border:1px solid #CFC7BC;display:flex;align-items:center;justify-content:center;font-size:20px">＋</a><span class="muted" style="font-size:14px">最多 2</span></div>
-<a class="btn" href="#" style="width:100%">購買</a><p style="font-size:14px;color:#5E5852;margin-top:8px;text-align:center">展示版，尚未開放購買</p>
-<h2 style="font-size:18px;margin:32px 0 8px">商品說明</h2><p>天然紫水晶圓珠，顏色由淺紫到深紫自然漸層，每顆紋理略有不同。彈力繩串製，方便穿戴。實品顏色以照片為準，可能因光線略有差異。</p></div></div></section>
-<style>@media(min-width:900px){.pd{grid-template-columns:1.2fr 1fr;gap:56px!important}}</style><footer><div class="wrap">品牌名稱（示意）・此為展示版畫面，照片為電腦生成示意圖，商品與價格皆為展示用。</div></footer></body></html>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>手串 01｜品牌名稱（示意）</title>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400&family=Noto+Serif+TC:wght@200;300;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet"><link rel="stylesheet" href="zen.css"><style>.pd{display:grid;grid-template-columns:7fr 5fr;gap:6vw;padding:5vh 8vw 0;align-items:start}
+.gal{display:grid;grid-template-columns:72px 1fr;gap:18px}.thumbs{display:flex;flex-direction:column;gap:12px}.thumbs button{padding:0;border:1px solid transparent;background:none;cursor:pointer;width:72px;height:90px;overflow:hidden}.thumbs button.on{border-color:var(--ink)}.thumbs img{width:100%;height:100%;object-fit:cover;filter:grayscale(.6) sepia(.12)}
+.thumbs .void{height:100%}.thumbs .void .v{font-size:10px;letter-spacing:.2em}
+.main{aspect-ratio:4/5}.main img{transition:opacity .6s,transform 1.8s}
+.buy{position:sticky;top:110px;display:grid;grid-template-columns:auto 1fr;gap:0 3vw}
+.buy h1{writing-mode:vertical-rl;font-family:var(--wk);font-weight:400;font-size:clamp(36px,3.6vw,54px);letter-spacing:.4em;margin:0;grid-row:1/9}
+.buy .k{font-size:12px;letter-spacing:.4em;color:var(--ash);margin:28px 0 12px}.buy .k:first-of-type{margin-top:0}
+.buy .price{font-family:var(--en);font-size:28px;letter-spacing:.15em;padding-bottom:24px;border-bottom:1px solid var(--ln)}
+.opt{display:flex;flex-wrap:wrap;gap:8px}.opt button{min-width:64px;min-height:44px;border:1px solid var(--ln);background:none;cursor:pointer;font-family:var(--en);font-size:16px;letter-spacing:.05em}.opt button.on{border-color:var(--ink);background:var(--ink);color:var(--rice)}
+.guide{display:inline-flex;min-height:44px;align-items:center;font-size:12px;letter-spacing:.2em;color:var(--ash);border-bottom:1px solid var(--ln)}
+.cta{display:grid;grid-template-columns:1fr;gap:10px;margin-top:30px}.cta .btn{width:100%;min-height:58px;font-size:15px}
+.one{display:flex;align-items:center;gap:14px;margin-top:28px;font-size:13px;letter-spacing:.3em;color:var(--ash)}
+.sb,.soldmsg,.stq{display:none}body.stock .stq{display:block}body.stock .one{display:none}.stq .k{margin-top:28px!important}.row2{display:flex;align-items:center;gap:18px}.left{font-size:13px;letter-spacing:.3em;color:var(--seal)}.qty button:disabled{color:#bdb6aa;cursor:not-allowed;background:none}.sb{font-family:var(--wk);font-size:14px;letter-spacing:.4em;color:var(--seal);border:1px solid var(--seal);padding:2px 10px;margin-left:16px;vertical-align:middle}
+body.sold .sb{display:inline-block}body.sold .one{display:none}body.sold .soldmsg{display:block;margin-top:28px;font-size:13px;letter-spacing:.2em;color:var(--ash)}body.sold .price{color:var(--ash);text-decoration:none}
+body.sold .main img,body.sold .thumbs img{opacity:.4;filter:grayscale(1)}body.sold [data-add]{background:#c9c3b8!important;border-color:#c9c3b8!important;color:#8a847a!important;cursor:not-allowed;pointer-events:none}
+.acc{margin-top:34px;border-top:1px solid var(--ln)}.acc details{border-bottom:1px solid var(--ln)}.acc summary{min-height:56px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;letter-spacing:.35em;font-size:14px}.acc summary:after{content:"＋";color:var(--ash)}.acc details[open] summary:after{content:"－"}
+.acc p{color:var(--ash);font-size:14px;line-height:2.3;letter-spacing:.12em;margin:0 0 20px}
+.mk{display:inline-block;font-size:11px;border:1px solid var(--seal);color:var(--seal);padding:0 6px;letter-spacing:.2em;margin-left:6px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:18vh 0 0;background:#141311;color:var(--rice);min-height:70vh}.story .pic{min-height:70vh}.story .pic img{filter:grayscale(1) brightness(.7);position:absolute;inset:0}
+.story .tx{display:flex;gap:4vw;align-items:center;justify-content:center;padding:10vh 6vw}.story h2{writing-mode:vertical-rl;font-family:var(--wk);font-weight:400;font-size:clamp(28px,2.8vw,42px);letter-spacing:.4em;margin:0}.story .v{color:#c7bead;height:15em}
+.rel{padding:16vh 8vw 0}.rel h2{font-family:var(--wk);font-weight:400;letter-spacing:.4em;font-size:26px;margin:0 0 6vh}.rel .g{display:grid;grid-template-columns:repeat(3,1fr);gap:5vw}.rel .g a .pic,.rel .g a .void{aspect-ratio:4/5}.rel .g .info{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--ln)}.rel .nm{font-size:16px}
+@media(max-width:760px){.pd{grid-template-columns:1fr;padding:3vh 6vw 0;gap:6vh}.gal{grid-template-columns:1fr}.thumbs{flex-direction:row;order:2}.thumbs button{width:64px;height:80px}
+.buy{position:static;grid-template-columns:1fr}.buy h1{writing-mode:horizontal-tb;grid-row:auto;font-size:32px;margin-bottom:12px}
+.story{grid-template-columns:1fr}.story .pic{min-height:50vh}.rel{padding:10vh 6vw 0}.rel .g{grid-template-columns:1fr 1fr}.rel .g a:nth-child(3){display:none}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(236,231,221,.95);border-top:1px solid var(--ln);backdrop-filter:blur(8px)}.sticky .btn{flex:1;min-height:52px}body{padding-bottom:76px}}
+@media(min-width:761px){.sticky{display:none}}</style></head><body>
+<header><nav><a href="list.html" aria-label="選單">☰</a><a class="h on" href="list.html#s">手串</a><a class="h" href="list.html#b">手鐲</a></nav><a class="logo" href="index.html">品牌名稱（示意）</a><nav><a href="cart.html" aria-label="購物袋">袋・<span id="bagn">2</span></a></nav></header><div class="crumb"><a href="index.html">首頁</a>　／　<a href="list.html">選物</a>　／　<a href="list.html#s">手串</a>　／　手串 01</div>
+<div class="pd"><div class="gal rv"><div class="thumbs"><button class="on" data-src="assets/bracelet-a.jpg" aria-label="第1張"><img src="assets/bracelet-a.jpg" alt=""></button><button class="" data-src="assets/detail-beads.jpg" aria-label="第2張"><img src="assets/detail-beads.jpg" alt=""></button><button class="" data-src="assets/stones-fabric.jpg" aria-label="第3張"><img src="assets/stones-fabric.jpg" alt=""></button><button aria-label="第4張"><div class="void"><span class="v">待補</span></div></button></div><div class="pic main"><img id="mainimg" src="assets/bracelet-a.jpg" alt=""><span class="tag">示意圖</span></div></div>
+<div class="buy rv"><h1>手串 <span style="text-combine-upright:all">01</span></h1>
+<div><div class="k">手串　・　壹</div><div class="price">NT$ —<span class="sb">已售出</span></div>
+<div class="k" style="margin-top:28px;display:flex;justify-content:space-between;align-items:center"><span>手圍尺寸</span><a class="guide" href="#">尺寸指南</a></div>
+<div class="opt"><button>14 cm</button><button class="on">15 cm</button><button>16 cm</button><button>17 cm</button><button>18 cm</button></div>
+<div class="one"><span class="seal">一</span><span>僅此一件　・　售出即止</span></div><div class="stq"><div class="k">數量</div><div class="row2"><div class="qty" data-max="2"><button data-d="-1" aria-label="減少">−</button><span>1</span><button data-d="1" aria-label="增加">＋</button></div><span class="left">剩 2 件</span></div></div><div class="soldmsg">此件已售出。相近選物請見下方。</div>
+<div class="cta"><button class="btn solid" data-add>加入購物袋</button></div>
+<div class="acc"><details open><summary>商品說明</summary><p>商品說明文字（示意），尺寸、珠徑、規格等資訊由店家提供後填入。</p></details>
+<details open><summary>配送與付款<span class="mk">示意</span></summary><p>配送：超商取貨／宅配到府（運費 NT$ —，出貨時間待店家提供）。<br>付款：僅接受信用卡。</p></details>
+<details><summary>退換貨說明<span class="mk">示意</span></summary><p>退換貨說明佔位文字（示意）：退換期限、條件與流程待店家提供。</p></details>
+<details><summary>保養方式</summary><p>保養說明文字（示意）。</p></details></div></div></div></div>
+<section class="story"><div class="pic"><img src="assets/dark-hand.jpg" alt=""><span class="tag">示意圖</span></div><div class="tx rv"><h2>選物之心</h2><div class="v">品牌介紹文字（示意）</div><span class="seal">品牌<br>示意</span></div></section>
+<div class="rel"><h2 class="rv">相近選物</h2><div class="g">
+<a class="rv" href="product.html"><div class="pic"><img src="assets/bracelet-c.jpg" alt=""><span class="tag">示意圖</span></div><div class="info"><span class="nm">手串 03</span><span class="pr">NT$ —</span></div></a>
+<a class="rv" href="product.html"><div class="pic"><img src="assets/bracelet-d.jpg" alt=""><span class="tag">示意圖</span></div><div class="info"><span class="nm">手串 04</span><span class="pr">NT$ —</span></div></a>
+<a class="rv" href="product.html"><div class="void"><span class="v">影像待補</span></div><div class="info"><span class="nm">手鐲 01</span><span class="pr">NT$ —</span></div></a></div></div>
+<div class="sticky"><div class="pr" style="align-self:center;font-size:18px;min-width:84px">NT$ —</div><button class="btn solid" data-add>加入購物袋</button></div>
+<script>if(location.search.includes('stock=2')){document.body.classList.add('stock')}
+if(location.search.includes('sold')){document.body.classList.add('sold');document.querySelectorAll('[data-add]').forEach(b=>{b.disabled=true;b.textContent='已售出'})}
+document.querySelectorAll('.thumbs button[data-src]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.thumbs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const m=document.getElementById('mainimg');m.style.opacity=0;setTimeout(()=>{m.src=b.dataset.src;m.style.opacity=1},300)})</script><footer><span class="logo" style="color:var(--ink)">品牌名稱（示意）</span><span style="line-height:2.2">營業人名稱：（示意）｜統一編號：（示意）<br>© 2026　樣板僅供版面示意</span></footer>
+<div class="scrim" data-close></div><aside class="drawer" aria-label="購物袋"><div class="hd"><h3>購物袋</h3><button class="x" data-close aria-label="關閉">×</button></div>
+<div class="ok"><span class="seal">已入<br>袋</span>已加入購物袋</div>
+<div class="li"><div class="pic"><img src="assets/bracelet-a.jpg" alt=""><span class="tag">示意圖</span></div><div><div class="nm" style="font-size:17px">手串 01</div><div style="font-size:13px;color:var(--ash);letter-spacing:.15em;line-height:2.2">手圍：<span id="dsz">15 cm</span>　・　<span id="dq">僅此一件</span></div><div class="pr">NT$ —</div></div></div>
+<div class="ft"><div class="sum"><span>小計</span><span class="pr">NT$ —</span></div><a class="btn solid" href="cart.html">前往結帳</a><button class="btn" data-close>繼續選物</button></div></aside>
+<script src="zen.js"></script></body></html>
