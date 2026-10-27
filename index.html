@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>品牌名稱（示意）</title>
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400&family=Noto+Serif+TC:wght@200;300;900&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1e1d1b;--rice:#ece7dd;--tea:#b9a98c;--ash:#5a554d;--ln:rgba(30,29,27,.18);--wk:'LXGW WenKai TC','Noto Serif TC',serif;--tc:'Noto Serif TC','Noto Serif CJK TC',serif;--en:'Cormorant Garamond',serif}
+:root{--ink:#1e1d1b;--rice:#ece7dd;--tea:#b9a98c;--ash:#5a554d;--seal:#9b3b2a;--ln:rgba(30,29,27,.18);--wk:'LXGW WenKai TC','Noto Serif TC',serif;--tc:'Noto Serif TC','Noto Serif CJK TC',serif;--en:'Cormorant Garamond',serif}
 *{box-sizing:border-box}body{margin:0;background:var(--rice);color:var(--ink);font-family:var(--tc);font-weight:300}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.6;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.6' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .27 0 0 0 0 .22 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit;text-decoration:none}
@@ -12,7 +12,10 @@ header{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:spa
 header:before,header:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:opacity .5s ease}header:before{background:linear-gradient(rgba(16,15,13,.6),transparent)}
 header:after{background:rgba(236,231,221,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln);opacity:0}
 header.solid{color:var(--ink)}header.solid:before{opacity:0}header.solid:after{opacity:1}
-header nav{display:flex}header a{min-height:44px;min-width:44px;display:flex;align-items:center;padding:0 14px;font-size:13px;letter-spacing:.35em}
+header nav{display:flex}header a{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;padding:0 14px;font-size:13px;letter-spacing:.35em}
+/* 頁首購物車 */
+.cartlink{gap:10px}.cico{position:relative;display:inline-flex;width:24px;height:24px;flex:none}.cico svg{display:block}
+.badge{position:absolute;top:-7px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--seal);color:#f6f2ea;font:500 11px/18px system-ui,-apple-system,sans-serif;letter-spacing:0;text-align:center}.badge[hidden]{display:none}
 .logo{font-family:var(--wk);font-size:20px;letter-spacing:.5em}
 /* hero: dark, single light */
 .hero{position:relative;height:100vh;min-height:640px;background:#100f0d;overflow:hidden;color:var(--rice)}
@@ -50,7 +53,7 @@ section{padding:22vh 8vw;position:relative}
 .cats .k{font-family:var(--wk);font-size:clamp(56px,6vw,96px);font-weight:300;color:var(--ink)}
 footer{padding:12vh 8vw 6vh;display:flex;justify-content:space-between;align-items:flex-end;color:var(--ash);font-size:12px;letter-spacing:.3em}
 .rv{opacity:0;filter:blur(6px);transition:opacity 1.8s ease,filter 1.8s ease}.rv.on{opacity:1;filter:none}
-@media(max-width:760px){.scroll{display:none}header nav a.h{display:none}.logo{font-size:15px;letter-spacing:.35em}
+@media(max-width:760px){.scroll{display:none}header nav a.h{display:none}.cartlink .ct{display:none}.badge{min-width:20px;height:20px;border-radius:10px;font-size:13px;line-height:20px;top:-8px;right:-11px}.logo{font-size:15px;letter-spacing:.35em}
 .hero .img{width:100%}.hero .img:after{background:linear-gradient(90deg,rgba(16,15,13,.82),rgba(16,15,13,.35) 75%),linear-gradient(rgba(16,15,13,.6),transparent 30%,rgba(16,15,13,.85))}
 .hero .t{left:8vw;right:8vw;top:14vh;bottom:auto;align-items:flex-start}.hero h1{font-size:44px}.hero .cta{position:absolute;left:8vw;bottom:14vh;z-index:4}
 section{padding:14vh 8vw}.ma{grid-template-columns:1fr;gap:6vh}.ma h2{writing-mode:horizontal-tb}.enso{width:70vw}
@@ -58,7 +61,7 @@ section{padding:14vh 8vw}.ma{grid-template-columns:1fr;gap:6vh}.ma h2{writing-mo
 .dark{grid-template-columns:1fr}.dark .pic{min-height:56vh}.dark .pic:after{background:linear-gradient(transparent 50%,#141311)}
 .cats a{padding:8vh 0;flex-direction:column;gap:10px}.cats .v{writing-mode:horizontal-tb}footer{flex-direction:column;align-items:flex-start;gap:20px;font-size:13px}.v{font-size:13px}.hero .v{font-size:14px}.tag{font-size:13px}}
 </style></head><body>
-<header><nav><a href="list.html" aria-label="選單">☰</a><a class="h" href="list.html#s">手串</a><a class="h" href="list.html#b">手鐲</a></nav><a class="logo" href="index.html">品牌名稱（示意）</a><nav><a href="cart.html">袋・2</a></nav></header>
+<header><nav><a href="list.html" aria-label="選單">☰</a><a class="h" href="list.html#s">手串</a><a class="h" href="list.html#b">手鐲</a></nav><a class="logo" href="index.html">品牌名稱（示意）</a><nav><a class="cartlink" href="cart.html" aria-label="購物車，2 件商品"><span class="cico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.75 3.75h2.5l2.3 10.9a1.6 1.6 0 0 0 1.6 1.3h7.8a1.6 1.6 0 0 0 1.55-1.2l1.75-6.85H6.1"/><circle cx="9.75" cy="19.75" r="1.25"/><circle cx="17.25" cy="19.75" r="1.25"/></svg><span id="bagn" class="badge">2</span></span><span class="ct">購物車</span></a></nav></header>
 <div class="hero"><div class="img"><img src="assets/quartz-dark.jpg" alt=""><span class="tag">示意圖</span></div><div class="mist"></div>
 <div class="t"><h1>品牌標語示意</h1><div class="v">品牌一句話（示意）</div><div class="v">二〇二六・秋</div></div>
 <div class="cta" style="position:absolute;left:8vw;bottom:12vh;z-index:4;display:flex;align-items:center;gap:20px"><span class="seal">品牌<br>示意</span><a class="btn" href="list.html">靜心選物</a></div>
@@ -77,6 +80,6 @@ section{padding:14vh 8vw}.ma{grid-template-columns:1fr;gap:6vh}.ma h2{writing-mo
 
 <section style="padding-top:0;display:grid;place-items:center"><div class="item rv" style="width:min(520px,80vw)"><div class="pic"><img src="assets/stones-fabric.jpg" alt=""><span class="tag">示意圖</span></div><div class="info"><span class="nm">商品名稱</span><span class="pr">NT$ —</span></div></div></section>
 <footer><span class="logo" style="color:var(--ink)">品牌名稱（示意）</span><span style="line-height:2.2">營業人名稱：（示意）｜統一編號：（示意）<br>© 2026　樣板僅供版面示意</span></footer>
-<script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-/* hero 底部距頁首約 60px 時切換實底，避免米色區塊上文字看不清 */new IntersectionObserver(([e])=>document.querySelector('header').classList.toggle('solid',!e.isIntersecting),{rootMargin:'-140px 0px 0px 0px'}).observe(document.querySelector('.hero'))</script>
+<script src="zen.js"></script>
+<script>/* hero 底部距頁首約 60px 時切換實底，避免米色區塊上文字看不清 */new IntersectionObserver(([e])=>document.querySelector('header').classList.toggle('solid',!e.isIntersecting),{rootMargin:'-140px 0px 0px 0px'}).observe(document.querySelector('.hero'))</script>
 </body></html>

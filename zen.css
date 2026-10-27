@@ -7,6 +7,9 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
 header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:0 4vw;height:76px;background:rgba(236,231,221,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
 header nav{display:flex}header a,header button{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;padding:0 14px;font-size:13px;letter-spacing:.35em;background:none;border:0;cursor:pointer}
 header a.on{color:var(--seal)}
+/* 頁首購物車 */
+.cartlink{gap:10px}.cico{position:relative;display:inline-flex;width:24px;height:24px;flex:none}.cico svg{display:block}
+.badge{position:absolute;top:-7px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--seal);color:#f6f2ea;font:500 11px/18px system-ui,-apple-system,sans-serif;letter-spacing:0;text-align:center}.badge[hidden]{display:none}
 .logo{font-family:var(--wk);font-size:20px;letter-spacing:.5em}
 .seal{display:inline-flex;width:44px;height:44px;border:1px solid var(--seal);color:var(--seal);font-family:var(--wk);font-size:14px;align-items:center;justify-content:center;line-height:1.1;text-align:center;flex:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 36px;border:1px solid var(--ink);font-size:14px;letter-spacing:.5em;transition:.6s;background:none;cursor:pointer}
@@ -22,13 +25,13 @@ footer{padding:12vh 8vw 6vh;display:flex;justify-content:space-between;align-ite
 .rv{opacity:0;filter:blur(6px);transition:opacity 1.6s ease,filter 1.6s ease}.rv.on{opacity:1;filter:none}
 /* drawer */
 .scrim{position:fixed;inset:0;background:rgba(16,15,13,.45);opacity:0;pointer-events:none;transition:.6s;z-index:60}
-.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,92vw);background:var(--rice);z-index:61;transform:translateX(100%);transition:transform .7s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;}body.dopen .drawer{box-shadow:-30px 0 60px rgba(0,0,0,.18)}
-body.dopen .scrim{opacity:1;pointer-events:auto}body.dopen .drawer{transform:none}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,92vw);background:var(--rice);z-index:61;transform:translateX(100%);visibility:hidden;transition:transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s .7s;display:flex;flex-direction:column;}body.dopen .drawer{box-shadow:-30px 0 60px rgba(0,0,0,.18)}
+body.dopen .scrim{opacity:1;pointer-events:auto}body.dopen .drawer{transform:none;visibility:visible;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .drawer .hd{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-bottom:1px solid var(--ln)}
 .drawer .hd h3{font-family:var(--wk);font-weight:400;letter-spacing:.4em;margin:0;font-size:20px}
 .drawer .x{width:44px;height:44px;border:0;background:none;font-size:22px;cursor:pointer}
-.drawer .ok{display:flex;align-items:center;gap:14px;padding:22px 28px;color:var(--ash);font-size:13px;letter-spacing:.2em}
+.drawer .ok{display:flex;align-items:center;gap:12px;padding:22px 28px;color:var(--ink);font-size:14px;letter-spacing:.2em}.drawer .ok svg{flex:none}
 .drawer .li{display:grid;grid-template-columns:84px 1fr;gap:18px;padding:0 28px 24px;border-bottom:1px solid var(--ln)}.drawer .li .pic{aspect-ratio:4/5}
 .drawer .ft{margin-top:auto;padding:24px 28px;border-top:1px solid var(--ln);display:grid;gap:12px}
 .drawer .sum{display:flex;justify-content:space-between;letter-spacing:.3em;font-size:14px;margin-bottom:6px}
-@media(max-width:760px){header nav a.h{display:none}.logo{font-size:15px;letter-spacing:.35em}header{padding:0 2vw}.crumb{padding:3vh 6vw 0;font-size:13px}footer{flex-direction:column;align-items:flex-start;gap:20px;font-size:13px}.v{font-size:13px}.tag{font-size:13px}}
+@media(max-width:760px){header nav a.h{display:none}.cartlink .ct{display:none}.badge{min-width:20px;height:20px;border-radius:10px;font-size:13px;line-height:20px;top:-8px;right:-11px}.logo{font-size:15px;letter-spacing:.35em}header{padding:0 2vw}.crumb{padding:3vh 6vw 0;font-size:13px}footer{flex-direction:column;align-items:flex-start;gap:20px;font-size:13px}.v{font-size:13px}.tag{font-size:13px}}
