@@ -4,7 +4,7 @@
 .thd{display:flex;justify-content:space-between;align-items:baseline;padding:0 0 14px;border-bottom:1px solid var(--ink)}.thd h2{font-family:var(--wk);font-weight:400;font-size:20px;letter-spacing:.3em;margin:0}.thd span{font-size:12px;letter-spacing:.35em;color:var(--ash)}
 .ci{display:grid;grid-template-columns:120px 1fr 140px;gap:0 2vw;padding:30px 0;border-bottom:1px solid var(--ln);align-items:start}
 .ci .th .pic,.ci .th .void{aspect-ratio:4/5;height:auto}.ci .meta{padding-left:1vw;min-width:0}.ci .meta .nm{font-size:18px}.ci .meta .s{font-size:13px;color:var(--ash);letter-spacing:.15em;line-height:2.2}
-.ci .ctl{display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px;margin-top:10px}.ci .one{font-size:13px;letter-spacing:.25em;color:var(--ash);min-height:44px;display:inline-flex;align-items:center}
+.ci .ctl{display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px;margin-top:10px}.ci .one{font-size:12px;letter-spacing:.2em;color:var(--ink);border:1px solid rgba(30,29,27,.45);padding:3px 8px;line-height:1.5;display:inline-flex;align-items:center;white-space:nowrap}
 .qty button:disabled{color:#bdb6aa;cursor:not-allowed;background:none}
 .rm{min-height:44px;display:inline-flex;align-items:center;font-size:12px;letter-spacing:.3em;color:var(--ash);background:none;border:0;padding:0;cursor:pointer;border-bottom:1px solid transparent}.rm:hover{border-bottom-color:var(--ash)}
 .ci .sub{text-align:right;white-space:nowrap}.ci .sub .lb{display:none}
@@ -21,7 +21,7 @@
 .empty h2{font-family:var(--wk);font-weight:400;font-size:clamp(26px,2.6vw,36px);letter-spacing:.3em;margin:0 0 30px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 body.isempty .cw{display:none}body.isempty .empty{display:grid}
-@media(max-width:760px){.ch{padding:4vh 6vw 3vh}.cw{grid-template-columns:1fr;padding:0 6vw;gap:6vh}.thd span{display:none}
+@media(max-width:760px){.ch{padding:4vh 6vw 3vh;align-items:baseline;gap:0}.ch h1{writing-mode:horizontal-tb;font-size:30px;letter-spacing:.3em}.ch .cn{writing-mode:horizontal-tb;letter-spacing:.2em;font-size:13px}.ci .one{font-size:13px}.cw{grid-template-columns:1fr;padding:0 6vw;gap:6vh}.thd span{display:none}
 .ci{grid-template-columns:88px 1fr;gap:10px 18px;padding:22px 0}.ci .th{grid-row:1/3}.ci .meta{padding:0}.ci .meta .nm{font-size:16px}.ci .sub{text-align:left;font-size:15px;grid-column:2}.ci .sub .lb{display:inline;font-family:var(--tc);font-size:13px;letter-spacing:.2em;color:var(--ash);margin-right:10px}
 .rm,.thd span,.back{font-size:13px}.sumbox{position:static;padding:24px}.sumbox .s{font-size:14px}
 .cbar{display:flex;align-items:center;justify-content:space-between;gap:14px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(236,231,221,.95);border-top:1px solid var(--ln);backdrop-filter:blur(8px)}
@@ -29,11 +29,11 @@ body.isempty .cw{display:none}body.isempty .empty{display:grid}
 body:not(.isempty){padding-bottom:calc(76px + env(safe-area-inset-bottom))}body.isempty .cbar{display:none}
 .empty{grid-template-columns:1fr;text-align:center;justify-items:center;padding:6vh 6vw}.enso{width:56vw}.empty .btn{width:100%}}</style></head><body>
 <header><nav><a href="list.html" aria-label="選單">☰</a><a class="h" href="list.html#s">手串</a><a class="h" href="list.html#b">手鐲</a></nav><a class="logo" href="index.html">品牌名稱（示意）</a><nav><a class="cartlink" href="cart.html" aria-current="page" aria-label="購物車，2 件商品"><span class="cico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.75 3.75h2.5l2.3 10.9a1.6 1.6 0 0 0 1.6 1.3h7.8a1.6 1.6 0 0 0 1.55-1.2l1.75-6.85H6.1"/><circle cx="9.75" cy="19.75" r="1.25"/><circle cx="17.25" cy="19.75" r="1.25"/></svg><span id="bagn" class="badge">2</span></span><span class="ct">購物車</span></a></nav></header><div class="crumb"><a href="index.html">首頁</a>　／　購物車</div>
-<div class="ch"><h1>購物車</h1></div>
+<div class="ch"><h1>購物車</h1><span class="v cn" id="chn">共 2 件</span></div>
 <div class="cw"><div><div class="thd"><h2 id="ctitle">購物車（2 件）</h2><span>小計</span></div><div id="items"></div><a class="back" href="list.html">← 繼續逛逛</a></div>
 <aside class="sumbox"><h2>訂單摘要</h2><div class="r"><span id="cnum">商品小計（2 件）</span><span class="pr" id="csub">NT$ —</span></div><div class="r"><span>運費</span><span class="ship">結帳時計算</span></div>
 <div class="r t"><span>合計</span><span class="pr" id="ctot">NT$ —</span></div>
-<a class="btn solid" href="#">前往結帳</a><div class="s">付款方式：僅接受信用卡。<br>結帳時再註冊或登入。<br>按下結帳後，選物將為您保留 15 分鐘。<br>標示「僅此一件」的選物售出即止。</div></aside></div>
+<a class="btn solid" href="#">前往結帳</a><div class="s">付款方式：僅接受信用卡。<br>結帳時再註冊或登入。<br>標示「僅此一件」者，此款僅一件，售完即止。</div></aside></div>
 <div class="cbar"><div><span class="lb" id="cbnum">合計・2 件</span><span class="pr" id="cbtot">NT$ —</span></div><a class="btn solid" href="#">前往結帳</a></div>
 <div class="empty"><div class="enso"><span class="seal">空</span></div><div><h2>購物車還是空的</h2><a class="btn solid" href="list.html">去逛逛</a></div></div>
 <p class="sr" aria-live="polite" id="clive"></p>
@@ -48,7 +48,7 @@ const money=n=>n==null?'NT$ —':'NT$ '+n.toLocaleString('en-US'),line=it=>it.pr
 const count=()=>items.reduce((a,b)=>a+b.qty,0);
 function draw(){L.innerHTML=items.map((it,i)=>{const one=it.max<=1;return '<div class="ci" data-i="'+i+'"><a class="th" href="product.html" tabindex="-1" aria-hidden="true">'+(it.img?'<div class="pic"><img src="'+it.img+'" alt=""><span class="tag">示意圖</span></div>':'<div class="void"><span class="v">待補</span></div>')+'</a><div class="meta"><a class="nm" href="product.html">'+it.nm+'</a><div class="s">'+it.spec+'</div><div class="s">單價　<span class="pr">'+money(it.price)+'</span></div><div class="ctl">'+(one?'<span class="one">僅此一件</span>':'<div class="qty" data-cart role="group" aria-label="'+it.nm+' 數量"><button type="button" data-d="-1" aria-label="減少 '+it.nm+' 數量"'+(it.qty<=1?' disabled':'')+'>−</button><span>'+it.qty+'</span><button type="button" data-d="1" aria-label="增加 '+it.nm+' 數量"'+(it.qty>=it.max?' disabled':'')+'>＋</button></div>')+'<button type="button" class="rm" aria-label="移除 '+it.nm+'">移除</button></div></div><div class="sub"><span class="lb">小計</span><span class="pr">'+line(it)+'</span></div></div>'}).join('');sum()}
 /* 合計：任何一件價格未定就顯示 NT$ — */
-function sum(){const n=count(),t=items.some(b=>b.price==null)?null:items.reduce((a,b)=>a+b.price*b.qty,0);$('ctitle').textContent='購物車（'+n+' 件）';$('cnum').textContent='商品小計（'+n+' 件）';$('cbnum').textContent='合計・'+n+' 件';[$('csub'),$('ctot'),$('cbtot')].forEach(e=>e.textContent=money(t));setBag(n);document.body.classList.toggle('isempty',!items.length)}
+function sum(){const n=count(),t=items.some(b=>b.price==null)?null:items.reduce((a,b)=>a+b.price*b.qty,0);$('ctitle').textContent='購物車（'+n+' 件）';$('chn').textContent='共 '+n+' 件';$('cnum').textContent='商品小計（'+n+' 件）';$('cbnum').textContent='合計・'+n+' 件';[$('csub'),$('ctot'),$('cbtot')].forEach(e=>e.textContent=money(t));setBag(n);document.body.classList.toggle('isempty',!items.length)}
 L.addEventListener('click',e=>{const b=e.target.closest('button'),r=e.target.closest('.ci');if(!b||!r)return;const i=+r.dataset.i,it=items[i];
 if(b.classList.contains('rm')){items.splice(i,1);draw();$('clive').textContent='已移除 '+it.nm+'。購物車共 '+count()+' 件';const nx=L.querySelectorAll('.rm')[Math.min(i,items.length-1)];(nx||document.querySelector('.empty .btn')).focus();return}
 const d=+b.dataset.d;if(d&&!b.disabled){it.qty=Math.min(it.max,Math.max(1,it.qty+d));draw();$('clive').textContent=it.nm+' 數量 '+it.qty+'。購物車共 '+count()+' 件';const q=L.querySelector('.ci[data-i="'+i+'"] [data-d="'+d+'"]');(q.disabled?L.querySelector('.ci[data-i="'+i+'"] [data-d="'+(-d)+'"]'):q).focus()}});

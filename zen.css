@@ -10,6 +10,10 @@ header a.on{color:var(--seal)}
 /* 頁首購物車 */
 .cartlink{gap:10px}.cico{position:relative;display:inline-flex;width:24px;height:24px;flex:none}.cico svg{display:block}
 .badge{position:absolute;top:-7px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--seal);color:#f6f2ea;font:500 11px/18px system-ui,-apple-system,sans-serif;letter-spacing:0;text-align:center}.badge[hidden]{display:none}
+.badge.bump{animation:bump .45s cubic-bezier(.3,.7,.4,1.4)}@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.4)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.badge.bump{animation:none}}
+/* 電腦版：圖示＋「購物車」＋徽章（徽章在字的右側） */
+@media(min-width:761px){.cartlink{position:relative;padding-right:42px}.cartlink:has(.badge[hidden]){padding-right:14px}.cartlink .cico{position:static}.cartlink .badge{top:50%;right:14px;margin-top:-9px}}
 .logo{font-family:var(--wk);font-size:20px;letter-spacing:.5em}
 .seal{display:inline-flex;width:44px;height:44px;border:1px solid var(--seal);color:var(--seal);font-family:var(--wk);font-size:14px;align-items:center;justify-content:center;line-height:1.1;text-align:center;flex:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 36px;border:1px solid var(--ink);font-size:14px;letter-spacing:.5em;transition:.6s;background:none;cursor:pointer}
