@@ -39,3 +39,6 @@ body.dopen .scrim{opacity:1;pointer-events:auto}body.dopen .drawer{transform:non
 .drawer .ft{margin-top:auto;padding:24px 28px;border-top:1px solid var(--ln);display:grid;gap:12px}
 .drawer .sum{display:flex;justify-content:space-between;letter-spacing:.3em;font-size:14px;margin-bottom:6px}
 @media(max-width:760px){header nav a.h{display:none}.cartlink .ct{display:none}.badge{min-width:20px;height:20px;border-radius:10px;font-size:13px;line-height:20px;top:-8px;right:-11px}.logo{font-size:15px;letter-spacing:.35em}header{padding:0 2vw}.crumb{padding:3vh 6vw 0;font-size:13px}footer{flex-direction:column;align-items:flex-start;gap:20px;font-size:13px}.v{font-size:13px}.tag{font-size:13px}}
+
+/* 示意價旁的小字標註 */
+.pn{font-family:var(--tc);font-size:11px;font-weight:300;letter-spacing:.15em;color:var(--ash);margin-left:.5em;vertical-align:.15em}@media(max-width:760px){.pn{font-size:12px}}

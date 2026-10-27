@@ -39,16 +39,16 @@ body:not(.isempty){padding-bottom:calc(76px + env(safe-area-inset-bottom))}body.
 <p class="sr" aria-live="polite" id="clive"></p>
 <footer><span class="logo" style="color:var(--ink)">品牌名稱（示意）</span><span style="line-height:2.2">營業人名稱：（示意）｜統一編號：（示意）<br>© 2026　樣板僅供版面示意</span></footer>
 <script src="zen.js"></script>
-<script>{/* 示意資料：寫死在頁面內；price 為 null 表示價格待店家提供 */
-const items=[{nm:'手串 01',spec:'手圍：15 cm',price:null,img:'assets/bracelet-a.jpg',qty:1,max:1},{nm:'手串 02',spec:'手圍：16 cm',price:null,img:'assets/bracelet-b.jpg',qty:1,max:3}];
+<script>{/* 示意資料：寫死在頁面內；單價取自 zen.js 的 PRICES（無價格時顯示 NT$ —） */
+const items=[{nm:'手串 01',spec:'手圍：15 cm',price:PRICES['手串 01'],img:'assets/bracelet-a.jpg',qty:1,max:1},{nm:'手串 02',spec:'手圍：16 cm',price:PRICES['手串 02'],img:'assets/bracelet-b.jpg',qty:1,max:3}];
 const m=location.search.match(/qty=([0-9]+)/);if(m){items[0].max=2;items[0].qty=Math.min(2,Math.max(1,+m[1]))}
 if(location.search.includes('empty'))items.length=0;
 const L=document.getElementById('items'),$=id=>document.getElementById(id);
-const money=n=>n==null?'NT$ —':'NT$ '+n.toLocaleString('en-US'),line=it=>it.price==null?'—':money(it.price*it.qty);
+const money=priceHTML,line=it=>it.price==null?'—':money(it.price*it.qty);
 const count=()=>items.reduce((a,b)=>a+b.qty,0);
 function draw(){L.innerHTML=items.map((it,i)=>{const one=it.max<=1;return '<div class="ci" data-i="'+i+'"><a class="th" href="product.html" tabindex="-1" aria-hidden="true">'+(it.img?'<div class="pic"><img src="'+it.img+'" alt=""><span class="tag">示意圖</span></div>':'<div class="void"><span class="v">待補</span></div>')+'</a><div class="meta"><a class="nm" href="product.html">'+it.nm+'</a><div class="s">'+it.spec+'</div><div class="s">單價　<span class="pr">'+money(it.price)+'</span></div><div class="ctl">'+(one?'<span class="one">僅此一件</span>':'<div class="qty" data-cart role="group" aria-label="'+it.nm+' 數量"><button type="button" data-d="-1" aria-label="減少 '+it.nm+' 數量"'+(it.qty<=1?' disabled':'')+'>−</button><span>'+it.qty+'</span><button type="button" data-d="1" aria-label="增加 '+it.nm+' 數量"'+(it.qty>=it.max?' disabled':'')+'>＋</button></div>')+'<button type="button" class="rm" aria-label="移除 '+it.nm+'">移除</button></div></div><div class="sub"><span class="lb">小計</span><span class="pr">'+line(it)+'</span></div></div>'}).join('');sum()}
 /* 合計：任何一件價格未定就顯示 NT$ — */
-function sum(){const n=count(),t=items.some(b=>b.price==null)?null:items.reduce((a,b)=>a+b.price*b.qty,0);$('ctitle').textContent='購物車（'+n+' 件）';$('chn').textContent='共 '+n+' 件';$('cnum').textContent='商品小計（'+n+' 件）';$('cbnum').textContent='合計・'+n+' 件';[$('csub'),$('ctot'),$('cbtot')].forEach(e=>e.textContent=money(t));setBag(n);document.body.classList.toggle('isempty',!items.length)}
+function sum(){const n=count(),t=items.some(b=>b.price==null)?null:items.reduce((a,b)=>a+b.price*b.qty,0);$('ctitle').textContent='購物車（'+n+' 件）';$('chn').textContent='共 '+n+' 件';$('cnum').textContent='商品小計（'+n+' 件）';$('cbnum').textContent='合計・'+n+' 件';[$('csub'),$('ctot'),$('cbtot')].forEach(e=>e.innerHTML=money(t));setBag(n);document.body.classList.toggle('isempty',!items.length)}
 L.addEventListener('click',e=>{const b=e.target.closest('button'),r=e.target.closest('.ci');if(!b||!r)return;const i=+r.dataset.i,it=items[i];
 if(b.classList.contains('rm')){items.splice(i,1);draw();$('clive').textContent='已移除 '+it.nm+'。購物車共 '+count()+' 件';const nx=L.querySelectorAll('.rm')[Math.min(i,items.length-1)];(nx||document.querySelector('.empty .btn')).focus();return}
 const d=+b.dataset.d;if(d&&!b.disabled){it.qty=Math.min(it.max,Math.max(1,it.qty+d));draw();$('clive').textContent=it.nm+' 數量 '+it.qty+'。購物車共 '+count()+' 件';const q=L.querySelector('.ci[data-i="'+i+'"] [data-d="'+d+'"]');(q.disabled?L.querySelector('.ci[data-i="'+i+'"] [data-d="'+(-d)+'"]'):q).focus()}});
