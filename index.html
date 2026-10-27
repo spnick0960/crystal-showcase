@@ -1,13 +1,17 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>品牌名稱（示意）</title>
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400&family=Noto+Serif+TC:wght@200;300;900&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1e1d1b;--rice:#ece7dd;--tea:#b9a98c;--ash:#7d786f;--ln:rgba(30,29,27,.18);--wk:'LXGW WenKai TC','Noto Serif TC',serif;--tc:'Noto Serif TC','Noto Serif CJK TC',serif;--en:'Cormorant Garamond',serif}
+:root{--ink:#1e1d1b;--rice:#ece7dd;--tea:#b9a98c;--ash:#5a554d;--ln:rgba(30,29,27,.18);--wk:'LXGW WenKai TC','Noto Serif TC',serif;--tc:'Noto Serif TC','Noto Serif CJK TC',serif;--en:'Cormorant Garamond',serif}
 *{box-sizing:border-box}body{margin:0;background:var(--rice);color:var(--ink);font-family:var(--tc);font-weight:300}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.6;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.6' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .27 0 0 0 0 .22 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit;text-decoration:none}
 .v{writing-mode:vertical-rl;letter-spacing:.5em;font-size:13px;color:var(--ash)}
 .tag{position:absolute;right:8px;bottom:6px;z-index:3;font-size:10px;letter-spacing:.1em;color:rgba(236,231,221,.85);background:rgba(0,0,0,.35);padding:2px 6px}
-header{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:0 4vw;height:80px;color:var(--rice);background:linear-gradient(rgba(16,15,13,.6),transparent)}
+header{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:0 4vw;height:80px;color:var(--rice);transition:color .5s ease}
+/* 頁首：hero 內透明，捲過 hero 後加實底（.solid） */
+header:before,header:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:opacity .5s ease}header:before{background:linear-gradient(rgba(16,15,13,.6),transparent)}
+header:after{background:rgba(236,231,221,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln);opacity:0}
+header.solid{color:var(--ink)}header.solid:before{opacity:0}header.solid:after{opacity:1}
 header nav{display:flex}header a{min-height:44px;min-width:44px;display:flex;align-items:center;padding:0 14px;font-size:13px;letter-spacing:.35em}
 .logo{font-family:var(--wk);font-size:20px;letter-spacing:.5em}
 /* hero: dark, single light */
@@ -18,7 +22,7 @@ header nav{display:flex}header a{min-height:44px;min-width:44px;display:flex;ali
 .mist{position:absolute;inset:0;background:radial-gradient(ellipse 30% 40% at 62% 30%,rgba(236,220,190,.14),transparent 70%);animation:m 7s ease-in-out infinite alternate;pointer-events:none}@keyframes m{to{transform:translate(-3%,4%);opacity:.6}}
 .hero .t{position:absolute;left:8vw;top:0;bottom:0;display:flex;gap:4vw;align-items:center;z-index:3}
 .hero h1{writing-mode:vertical-rl;font-family:var(--wk);font-weight:400;font-size:clamp(46px,6vw,92px);letter-spacing:.35em;margin:0;line-height:1.5;text-shadow:0 0 30px rgba(0,0,0,.6)}
-.hero .v{color:#e6dccb;text-shadow:0 0 12px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.8)}
+.hero .v{color:#f6f0e6;text-shadow:0 0 14px rgba(0,0,0,.95),0 0 4px rgba(0,0,0,.95),0 1px 2px rgba(0,0,0,.9)}
 .seal{display:inline-flex;width:44px;height:44px;border:1px solid #9b3b2a;color:#9b3b2a;font-family:var(--wk);font-size:14px;align-items:center;justify-content:center;line-height:1.1;text-align:center}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 36px;border:1px solid currentColor;font-size:13px;letter-spacing:.5em;transition:.6s}
 .btn:hover{background:var(--rice);color:var(--ink)}.btn.d:hover{background:var(--ink);color:var(--rice)}
@@ -35,7 +39,7 @@ section{padding:22vh 8vw;position:relative}
 .item .vv{position:absolute;left:-36px;top:0}
 .item.b{margin-top:22vh}
 .void{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#e3ddd1,#d6cfc1);position:relative}
-.void .v{font-size:14px;color:#8f877a}
+.void .v{font-size:14px;color:var(--ash)}
 .dark{background:#141311;color:var(--rice);display:grid;grid-template-columns:1fr 1fr;padding:0;min-height:90vh}
 .dark .pic{position:relative;overflow:hidden}.dark .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.7)}
 .dark .pic:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 40%,#141311)}
@@ -52,7 +56,7 @@ footer{padding:12vh 8vw 6vh;display:flex;justify-content:space-between;align-ite
 section{padding:14vh 8vw}.ma{grid-template-columns:1fr;gap:6vh}.ma h2{writing-mode:horizontal-tb}.enso{width:70vw}
 .items{grid-template-columns:1fr;gap:10vh}.item.b{margin-top:0;width:80%;margin-left:auto}.item .vv{display:none}
 .dark{grid-template-columns:1fr}.dark .pic{min-height:56vh}.dark .pic:after{background:linear-gradient(transparent 50%,#141311)}
-.cats a{padding:8vh 0;flex-direction:column;gap:10px}.cats .v{writing-mode:horizontal-tb}footer{flex-direction:column;align-items:flex-start;gap:20px}}
+.cats a{padding:8vh 0;flex-direction:column;gap:10px}.cats .v{writing-mode:horizontal-tb}footer{flex-direction:column;align-items:flex-start;gap:20px;font-size:13px}.v{font-size:13px}.hero .v{font-size:14px}.tag{font-size:13px}}
 </style></head><body>
 <header><nav><a href="list.html" aria-label="選單">☰</a><a class="h" href="list.html#s">手串</a><a class="h" href="list.html#b">手鐲</a></nav><a class="logo" href="index.html">品牌名稱（示意）</a><nav><a href="cart.html">袋・2</a></nav></header>
 <div class="hero"><div class="img"><img src="assets/quartz-dark.jpg" alt=""><span class="tag">示意圖</span></div><div class="mist"></div>
@@ -67,11 +71,12 @@ section{padding:14vh 8vw}.ma{grid-template-columns:1fr;gap:6vh}.ma h2{writing-mo
 <a class="item b rv" href="product.html"><div class="v vv">貳・手鐲</div><div class="void"><span class="v">影像待補</span></div><div class="info"><span class="nm">手鐲 01</span><span class="pr">NT$ —</span></div></a>
 </div></section>
 
-<section class="dark"><div class="pic"><img src="assets/dark-hand.jpg" alt=""><span class="tag">示意圖</span></div><div class="tx rv"><h2>工藝示意</h2><div class="v" style="color:#a39a89;height:16em">工藝介紹文字（示意）</div><a class="btn" href="list.html" style="writing-mode:vertical-rl;padding:30px 0;min-width:52px">看選物</a></div></section>
+<section class="dark"><div class="pic"><img src="assets/dark-hand.jpg" alt=""><span class="tag">示意圖</span></div><div class="tx rv"><h2>工藝示意</h2><div class="v" style="color:#ddd4c4;height:16em">工藝介紹文字（示意）</div><a class="btn" href="list.html" style="writing-mode:vertical-rl;padding:30px 0;min-width:52px">看選物</a></div></section>
 
 <section><div class="cats rv"><a href="list.html#s"><span class="k">串</span><span class="v">手串系列</span></a><a href="list.html#b"><span class="k">鐲</span><span class="v">手鐲系列</span></a></div></section>
 
 <section style="padding-top:0;display:grid;place-items:center"><div class="item rv" style="width:min(520px,80vw)"><div class="pic"><img src="assets/stones-fabric.jpg" alt=""><span class="tag">示意圖</span></div><div class="info"><span class="nm">商品名稱</span><span class="pr">NT$ —</span></div></div></section>
 <footer><span class="logo" style="color:var(--ink)">品牌名稱（示意）</span><span style="line-height:2.2">營業人名稱：（示意）｜統一編號：（示意）<br>© 2026　樣板僅供版面示意</span></footer>
-<script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(el=>io.observe(el));</script>
+<script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* hero 底部距頁首約 60px 時切換實底，避免米色區塊上文字看不清 */new IntersectionObserver(([e])=>document.querySelector('header').classList.toggle('solid',!e.isIntersecting),{rootMargin:'-140px 0px 0px 0px'}).observe(document.querySelector('.hero'))</script>
 </body></html>

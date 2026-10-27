@@ -23,7 +23,10 @@ body.sold .main img,body.sold .thumbs img{opacity:.4;filter:grayscale(1)}body.so
 @media(max-width:760px){.pd{grid-template-columns:1fr;padding:3vh 6vw 0;gap:6vh}.gal{grid-template-columns:1fr}.thumbs{flex-direction:row;order:2}.thumbs button{width:64px;height:80px}
 .buy{position:static;grid-template-columns:1fr}.buy h1{writing-mode:horizontal-tb;grid-row:auto;font-size:32px;margin-bottom:12px}
 .story{grid-template-columns:1fr}.story .pic{min-height:50vh}.rel{padding:10vh 6vw 0}.rel .g{grid-template-columns:1fr 1fr}.rel .g a:nth-child(3){display:none}
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(236,231,221,.95);border-top:1px solid var(--ln);backdrop-filter:blur(8px)}.sticky .btn{flex:1;min-height:52px}body{padding-bottom:76px}}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(236,231,221,.95);border-top:1px solid var(--ln);backdrop-filter:blur(8px);transform:translateY(105%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s .45s}.sticky .btn{flex:1;min-height:52px}
+/* 頁內「加入」按鈕捲出畫面上方後才顯示底部列，此時才加底部留白 */
+body.showbar .sticky{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.2,.7,.2,1)}body.showbar{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+.buy .k,.guide{font-size:13px}.mk{font-size:13px}.thumbs .void .v{font-size:13px}body.sold .soldmsg{font-size:14px}}
 @media(min-width:761px){.sticky{display:none}}</style></head><body>
 <header><nav><a href="list.html" aria-label="選單">☰</a><a class="h on" href="list.html#s">手串</a><a class="h" href="list.html#b">手鐲</a></nav><a class="logo" href="index.html">品牌名稱（示意）</a><nav><a href="cart.html" aria-label="購物袋">袋・<span id="bagn">2</span></a></nav></header><div class="crumb"><a href="index.html">首頁</a>　／　<a href="list.html">選物</a>　／　<a href="list.html#s">手串</a>　／　手串 01</div>
 <div class="pd"><div class="gal rv"><div class="thumbs"><button class="on" data-src="assets/bracelet-a.jpg" aria-label="第1張"><img src="assets/bracelet-a.jpg" alt=""></button><button class="" data-src="assets/detail-beads.jpg" aria-label="第2張"><img src="assets/detail-beads.jpg" alt=""></button><button class="" data-src="assets/stones-fabric.jpg" aria-label="第3張"><img src="assets/stones-fabric.jpg" alt=""></button><button aria-label="第4張"><div class="void"><span class="v">待補</span></div></button></div><div class="pic main"><img id="mainimg" src="assets/bracelet-a.jpg" alt=""><span class="tag">示意圖</span></div></div>
@@ -32,7 +35,7 @@ body.sold .main img,body.sold .thumbs img{opacity:.4;filter:grayscale(1)}body.so
 <div class="k" style="margin-top:28px;display:flex;justify-content:space-between;align-items:center"><span>手圍尺寸</span><a class="guide" href="#">尺寸指南</a></div>
 <div class="opt"><button>14 cm</button><button class="on">15 cm</button><button>16 cm</button><button>17 cm</button><button>18 cm</button></div>
 <div class="one"><span class="seal">一</span><span>僅此一件　・　售出即止</span></div><div class="stq"><div class="k">數量</div><div class="row2"><div class="qty" data-max="2"><button data-d="-1" aria-label="減少">−</button><span>1</span><button data-d="1" aria-label="增加">＋</button></div><span class="left">剩 2 件</span></div></div><div class="soldmsg">此件已售出。相近選物請見下方。</div>
-<div class="cta"><button class="btn solid" data-add>加入購物袋</button></div>
+<div class="cta"><button class="btn solid" data-add id="addmain">加入購物袋</button></div>
 <div class="acc"><details open><summary>商品說明</summary><p>商品說明文字（示意），尺寸、珠徑、規格等資訊由店家提供後填入。</p></details>
 <details open><summary>配送與付款<span class="mk">示意</span></summary><p>配送：超商取貨／宅配到府（運費 NT$ —，出貨時間待店家提供）。<br>付款：僅接受信用卡。</p></details>
 <details><summary>退換貨說明<span class="mk">示意</span></summary><p>退換貨說明佔位文字（示意）：退換期限、條件與流程待店家提供。</p></details>
@@ -45,6 +48,7 @@ body.sold .main img,body.sold .thumbs img{opacity:.4;filter:grayscale(1)}body.so
 <div class="sticky"><div class="pr" style="align-self:center;font-size:18px;min-width:84px">NT$ —</div><button class="btn solid" data-add>加入購物袋</button></div>
 <script>if(location.search.includes('stock=2')){document.body.classList.add('stock')}
 if(location.search.includes('sold')){document.body.classList.add('sold');document.querySelectorAll('[data-add]').forEach(b=>{b.disabled=true;b.textContent='已售出'})}
+{const a=document.getElementById('addmain'),f=()=>document.body.classList.toggle('showbar',a.getBoundingClientRect().bottom<76);addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()}
 document.querySelectorAll('.thumbs button[data-src]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.thumbs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const m=document.getElementById('mainimg');m.style.opacity=0;setTimeout(()=>{m.src=b.dataset.src;m.style.opacity=1},300)})</script><footer><span class="logo" style="color:var(--ink)">品牌名稱（示意）</span><span style="line-height:2.2">營業人名稱：（示意）｜統一編號：（示意）<br>© 2026　樣板僅供版面示意</span></footer>
 <div class="scrim" data-close></div><aside class="drawer" aria-label="購物袋"><div class="hd"><h3>購物袋</h3><button class="x" data-close aria-label="關閉">×</button></div>
 <div class="ok"><span class="seal">已入<br>袋</span>已加入購物袋</div>
